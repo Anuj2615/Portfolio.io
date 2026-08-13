@@ -157,17 +157,17 @@ function App() {
 
           <div className="miniTech">
             <div>
-              <span>0</span>
+              
               <p>Artificial Intelligence</p>
             </div>
 
             <div>
-              <span>02</span>
+              
               <p>Machine Learning</p>
             </div>
 
             <div>
-              <span>03</span>
+              
               <p>Generative AI</p>
             </div>
           </div>
