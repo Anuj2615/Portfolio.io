@@ -655,6 +655,9 @@ function App() {
 
   <div className="educationCard glassCard">
     <div className="educationYear">2025</div>
+    <div className="timeline">
+          <div className="timelineItem">
+            <div className="timelineDot"></div>
 
     <div>
       <span>GRADUATE</span>
