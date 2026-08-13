@@ -1496,6 +1496,51 @@ button {
 }
 
 /* ================= EDUCATION ================= */
+/* ================= EDUCATION TIMELINE ================= */
+
+.educationTimeline {
+  margin-top: 10px;
+}
+
+.educationTimeline .timelineItem {
+  margin-bottom: 28px;
+}
+
+.educationTimeline .timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.educationTimelineCard {
+  max-width: 800px;
+  padding: 35px;
+}
+
+.educationTimelineCard span {
+  color: #7767f5;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.educationTimelineCard h3 {
+  margin-top: 10px;
+
+  font-family: "Space Grotesk";
+
+  font-size: 26px;
+}
+
+.educationTimelineCard p {
+  margin-top: 14px;
+
+  color: #767b8c;
+
+  line-height: 1.8;
+
+  font-size: 13px;
+}
 
 .educationCard {
   padding: 35px;

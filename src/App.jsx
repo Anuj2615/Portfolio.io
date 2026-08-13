@@ -633,41 +633,48 @@ function App() {
 
 <section className="section" id="education">
   <div className="sectionHeading">
+    <span>05</span>
+
     <div>
       <p>ACADEMIC BACKGROUND</p>
       <h2>Education</h2>
     </div>
   </div>
 
-  <div className="educationCard glassCard">
-    <div className="educationYear">2027</div>
+  <div className="timeline educationTimeline">
 
-    <div>
-      <span>POSTGRADUATE</span>
+    {/* BCA */}
+    <div className="timelineItem">
+      <div className="timelineDot"></div>
 
-      <h3>
-        Master of Computer Applications in AI & ML
-      </h3>
+      <div className="glassCard educationTimelineCard">
+        <span>GRADUATE | 2022 - 2025</span>
 
-      <p>MCA • 2025 - 2027</p>
+        <h3>Bachelor of Computer Applications</h3>
+
+        <p>
+          Completed BCA with a strong foundation in programming,
+          computer science fundamentals, and software development.
+        </p>
+      </div>
     </div>
-  </div>
 
-  <div className="educationCard glassCard">
-    <div className="educationYear">2025</div>
-    <div className="timeline">
-          <div className="timelineItem">
-            <div className="timelineDot"></div>
+    {/* MCA */}
+    <div className="timelineItem">
+      <div className="timelineDot"></div>
 
-    <div>
-      <span>GRADUATE</span>
+      <div className="glassCard educationTimelineCard">
+        <span>POSTGRADUATE | 2025 - 2027</span>
 
-      <h3>
-        Bachelor of Computer Applications
-      </h3>
+        <h3>Master of Computer Applications in AI & ML</h3>
 
-      <p>BCA • 2022 - 2025</p>
+        <p>
+          Currently pursuing MCA with focus on Artificial Intelligence,
+          Machine Learning, Generative AI and intelligent systems.
+        </p>
+      </div>
     </div>
+
   </div>
 </section>
 
