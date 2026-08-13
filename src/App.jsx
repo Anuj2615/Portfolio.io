@@ -633,7 +633,6 @@ function App() {
 
 <section className="section" id="education">
   <div className="sectionHeading">
-    <span>05</span>
 
     <div>
       <p>ACADEMIC BACKGROUND</p>
