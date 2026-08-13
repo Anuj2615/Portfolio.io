@@ -63,12 +63,11 @@ function App() {
         onEnded={() => setIsPlaying(false)}
       />
 
-            {/* ================= NAVBAR ================= */}
+      {/* ================= NAVBAR ================= */}
 
-      <nav>
-        <div className="logo">
-          <img src={logo} alt="YK Logo" className="logoImage" />
-        </div>
+    <div className="logo">
+      <img src={logo} alt="YK Logo" className="logoImage" />
+    </div>
 
         <div className="navLinks">
           <button onClick={() => scrollToSection("about")}>
@@ -95,7 +94,6 @@ function App() {
         <button className="resumeBtn">
           Resume
         </button>
-      </nav>
 
       {/* ================= HERO ================= */}
 
