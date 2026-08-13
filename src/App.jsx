@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import "./App.css";
-import logo from "./assets/yk-logo.png";
 
+import logo from "./assets/yk-logo.png";
 import avatar from "./assets/avatar.png";
 import profile from "./assets/profile.jpeg";
+
+/* ================= ICONS ================= */
 
 const EmailIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -23,11 +25,12 @@ const GitHubIcon = () => (
   </svg>
 );
 
+/* ================= APP ================= */
+
 function App() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Voice intro
   const toggleAudio = () => {
     if (!audioRef.current) return;
 
@@ -41,12 +44,11 @@ function App() {
           setIsPlaying(true);
         })
         .catch(() => {
-          console.log("Audio file abhi add nahi hui hai.");
+          console.log("Voice introduction will be added later.");
         });
     }
   };
 
-  // Smooth scrolling
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -55,6 +57,7 @@ function App() {
 
   return (
     <main className="portfolio">
+
       {/* ================= AUDIO ================= */}
 
       <audio
@@ -65,11 +68,29 @@ function App() {
 
       {/* ================= NAVBAR ================= */}
 
-    <div className="logo">
-      <img src={logo} alt="YK Logo" className="logoImage" />
-    </div>
+      <nav className="navbar">
 
+        {/* LOGO */}
+        <button
+          className="brandLogo"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+          aria-label="Go to home"
+        >
+          <img
+            src={logo}
+            alt="YK Logo"
+            className="logoImage"
+          />
+        </button>
+
+        {/* NAVIGATION */}
         <div className="navLinks">
+
           <button onClick={() => scrollToSection("about")}>
             About
           </button>
@@ -86,19 +107,26 @@ function App() {
             Experience
           </button>
 
+          <button onClick={() => scrollToSection("education")}>
+            Education
+          </button>
+
           <button onClick={() => scrollToSection("contact")}>
             Contact
           </button>
+
         </div>
 
+        {/* RESUME */}
         <button className="resumeBtn">
           Resume
         </button>
 
+      </nav>
+
       {/* ================= HERO ================= */}
 
       <section className="hero">
-        {/* Background */}
 
         <div className="gridBackground"></div>
 
@@ -106,9 +134,10 @@ function App() {
         <div className="glow glowTwo"></div>
         <div className="glow glowThree"></div>
 
-        {/* ================= HERO LEFT ================= */}
+        {/* HERO LEFT */}
 
         <div className="heroLeft">
+
           <div className="availabilityBadge">
             <span></span>
             OPEN TO OPPORTUNITIES
@@ -124,9 +153,11 @@ function App() {
           </h1>
 
           <div className="roleWrapper">
+
             <p>AI Engineer</p>
 
             <div className="roleLine"></div>
+
           </div>
 
           <p className="description">
@@ -136,6 +167,7 @@ function App() {
           </p>
 
           <div className="heroButtons">
+
             <button
               className="primaryBtn"
               onClick={() => scrollToSection("projects")}
@@ -150,42 +182,42 @@ function App() {
             >
               Let's Connect
             </button>
+
           </div>
 
-          {/* Small tech labels */}
-
           <div className="miniTech">
+
             <div>
-              
               <p>Artificial Intelligence</p>
             </div>
 
             <div>
-              
               <p>Machine Learning</p>
             </div>
 
             <div>
-              
               <p>Generative AI</p>
             </div>
+
           </div>
+
         </div>
 
-        {/* ================= HERO RIGHT ================= */}
+        {/* HERO RIGHT */}
 
         <div className="heroRight">
-          {/* Orbit circles */}
 
           <div className="orbit orbitOne"></div>
           <div className="orbit orbitTwo"></div>
 
-          {/* ================= AVATAR ================= */}
+          {/* AVATAR */}
 
           <div className="avatarContainer">
+
             <div className="avatarBackGlow"></div>
 
             <div className="avatarImageWrapper">
+
               <img
                 src={avatar}
                 alt="Yogendra Kushwaha 3D Avatar"
@@ -193,10 +225,12 @@ function App() {
               />
 
               <div className="avatarBottomFade"></div>
+
             </div>
+
           </div>
 
-          {/* ================= VOICE BUTTON ================= */}
+          {/* VOICE */}
 
           <button
             className={`voiceButton ${
@@ -204,11 +238,13 @@ function App() {
             }`}
             onClick={toggleAudio}
           >
+
             <div className="voiceIcon">
               {isPlaying ? "❚❚" : "▶"}
             </div>
 
             <div>
+
               <span>
                 {isPlaying
                   ? "PLAYING INTRO"
@@ -220,10 +256,12 @@ function App() {
                   ? "Click to pause"
                   : "Play voice introduction"}
               </p>
+
             </div>
+
           </button>
 
-          {/* ================= FLOATING LABELS ================= */}
+          {/* FLOATING TAGS */}
 
           <div className="floatingLabel floatingLabelOne">
             <span>AI</span>
@@ -238,10 +276,12 @@ function App() {
           {/* ================= ID CARD ================= */}
 
           <div className="idCard">
+
             <div className="cardNoise"></div>
             <div className="cardShine"></div>
 
             <div className="idCardHeader">
+
               <p>DIGITAL IDENTITY</p>
 
               <div className="cardChip">
@@ -249,19 +289,22 @@ function App() {
                 <span></span>
                 <span></span>
               </div>
+
             </div>
 
             <div className="cardMain">
-              {/* ORIGINAL PHOTO */}
 
               <div className="miniPhoto">
+
                 <img
                   src={profile}
                   alt="Yogendra Kushwaha"
                 />
+
               </div>
 
               <div className="cardIdentity">
+
                 <span>AI ENGINEER</span>
 
                 <h3>
@@ -269,12 +312,15 @@ function App() {
                   <br />
                   Kushwaha
                 </h3>
+
               </div>
+
             </div>
 
             <div className="divider"></div>
 
             <div className="cardDetails">
+
               <div>
                 <span>DOMAIN</span>
                 <p>AI • ML • GenAI</p>
@@ -297,10 +343,13 @@ function App() {
                   <i></i>
                   Available
                 </p>
+
               </div>
+
             </div>
 
             <div className="cardFooter">
+
               <p>YK / AI / 2027</p>
 
               <div className="barcode">
@@ -312,9 +361,13 @@ function App() {
                 <i></i>
                 <i></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
       {/* ================= ABOUT ================= */}
@@ -323,16 +376,20 @@ function App() {
         className="section"
         id="about"
       >
+
         <div className="sectionHeading">
 
           <div>
             <p>GET TO KNOW ME</p>
             <h2>About Me</h2>
           </div>
+
         </div>
 
         <div className="aboutGrid">
+
           <div className="glassCard aboutMain">
+
             <p className="aboutBigText">
               I build intelligent applications that combine
               <span>
@@ -348,9 +405,11 @@ function App() {
               conversational AI, vector databases, LLM integrations
               and intelligent search systems.
             </p>
+
           </div>
 
           <div className="aboutStats">
+
             <div className="glassCard statCard">
               <h3>2027</h3>
               <p>MCA Graduation</p>
@@ -365,8 +424,11 @@ function App() {
               <h3>∞</h3>
               <p>Always Learning</p>
             </div>
+
           </div>
+
         </div>
+
       </section>
 
       {/* ================= SKILLS ================= */}
@@ -375,14 +437,18 @@ function App() {
         className="section"
         id="skills"
       >
+
         <div className="sectionHeading">
+
           <div>
             <p>WHAT I WORK WITH</p>
             <h2>Skills & Technologies</h2>
           </div>
+
         </div>
 
         <div className="skillsGrid">
+
           {[
             "Python",
             "Machine Learning",
@@ -401,18 +467,24 @@ function App() {
             "GitHub",
             "C++",
           ].map((skill, index) => (
+
             <div
               className="skillCard"
               key={skill}
             >
+
               <span>
                 {String(index + 1).padStart(2, "0")}
               </span>
 
               <p>{skill}</p>
+
             </div>
+
           ))}
+
         </div>
+
       </section>
 
       {/* ================= PROJECTS ================= */}
@@ -421,20 +493,21 @@ function App() {
         className="section"
         id="projects"
       >
+
         <div className="sectionHeading">
 
           <div>
             <p>THINGS I'VE BUILT</p>
             <h2>Featured Projects</h2>
           </div>
+
         </div>
 
         <div className="projectsGrid">
+
           {/* PROJECT 1 */}
 
           <article className="projectCard featuredProject">
-            <div className="projectNumber">
-            </div>
 
             <div className="projectTag">
               FEATURED PROJECT
@@ -453,15 +526,18 @@ function App() {
             </p>
 
             <div className="projectTech">
+
               <span>Python</span>
               <span>LangChain</span>
               <span>FAISS</span>
               <span>Groq</span>
               <span>HuggingFace</span>
               <span>Streamlit</span>
+
             </div>
 
             <div className="projectActions">
+
               <a
                 href="https://anuj2615-myproject-app-cajozc.streamlit.app/"
                 target="_blank"
@@ -477,14 +553,14 @@ function App() {
               >
                 GitHub ↗
               </a>
+
             </div>
+
           </article>
 
           {/* PROJECT 2 */}
 
           <article className="projectCard">
-            <div className="projectNumber">
-            </div>
 
             <div className="projectTag">
               GENERATIVE AI
@@ -503,14 +579,19 @@ function App() {
             </p>
 
             <div className="projectTech">
+
               <span>Python</span>
               <span>LangGraph</span>
               <span>Groq</span>
               <span>LLM</span>
+
             </div>
-            
+
             <div className="projectActions">
-              <button type="button">View Project</button>
+
+              <button type="button">
+                View Project
+              </button>
 
               <a
                 href="https://github.com/Anuj2615"
@@ -519,14 +600,14 @@ function App() {
               >
                 GitHub ↗
               </a>
+
             </div>
+
           </article>
 
-          {/*Project 3 */}
+          {/* PROJECT 3 */}
 
           <article className="projectCard featuredProject">
-            <div className="projectNumber">
-            </div>
 
             <div className="projectTag">
               ANALYSIS PROJECT
@@ -537,18 +618,21 @@ function App() {
             </h3>
 
             <p>
-              Google search analysis in machine learning uses smart computer models to study online user trends,
-               click habits, and query data. It helps systems find patterns
-               , guess what people want, and rank web pages better
+              Google search analysis using machine learning to
+              study online user trends, click behaviour and query
+              data to identify patterns and understand user intent.
             </p>
 
             <div className="projectTech">
+
               <span>Python</span>
-              <span>Google Tool</span>
+              <span>Google Tools</span>
               <span>Machine Learning</span>
+
             </div>
 
             <div className="projectActions">
+
               <a
                 href="https://anuj2615-myproject-app-cajozc.streamlit.app/"
                 target="_blank"
@@ -564,13 +648,15 @@ function App() {
               >
                 GitHub ↗
               </a>
+
             </div>
+
           </article>
 
-
-          {/* FUTURE PROJECT */}
+          {/* FUTURE */}
 
           <article className="projectCard futureProject">
+
             <div className="futureIcon">
               +
             </div>
@@ -582,11 +668,14 @@ function App() {
             </h3>
 
             <p>
-              More AI engineering projects are currently in
-              development.
+              More AI engineering projects are currently
+              in development.
             </p>
+
           </article>
+
         </div>
+
       </section>
 
       {/* ================= EXPERIENCE ================= */}
@@ -595,22 +684,26 @@ function App() {
         className="section"
         id="experience"
       >
+
         <div className="sectionHeading">
-          
 
           <div>
             <p>MY JOURNEY</p>
             <h2>Experience</h2>
           </div>
+
         </div>
 
         <div className="timeline">
+
           <div className="timelineItem">
+
             <div className="timelineDot"></div>
 
             <div className="glassCard experienceCard">
+
               <span>
-                AI ENGINEER INTERN | Akiyam Solution pvt ltd.
+                AI ENGINEER INTERN | Akiyam Solution Pvt. Ltd.
               </span>
 
               <h3>
@@ -623,57 +716,88 @@ function App() {
                 databases, conversational AI and modern AI
                 development tools.
               </p>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
       {/* ================= EDUCATION ================= */}
 
-<section className="section" id="education">
-  <div className="sectionHeading">
+      <section
+        className="section"
+        id="education"
+      >
 
-    <div>
-      <p>ACADEMIC BACKGROUND</p>
-      <h2>Education</h2>
-    </div>
-  </div>
+        <div className="sectionHeading">
 
-  <div className="timeline educationTimeline">
+          <div>
+            <p>ACADEMIC BACKGROUND</p>
+            <h2>Education</h2>
+          </div>
 
-    {/* MCA */}
-    <div className="timelineItem">
-      <div className="timelineDot"></div>
-      <div className="glassCard educationTimelineCard">
-        <span>POSTGRADUATE | 2025 - 2027</span>
+        </div>
 
-        <h3>Master of Computer Applications in AI & ML</h3>
+        <div className="timeline educationTimeline">
 
-        <p>
-          MCA with focus on Artificial Intelligence,
-          Machine Learning, Generative AI and intelligent systems.
-        </p>
-      </div>
-    </div>
+          {/* BCA */}
 
-    {/* BCA */}
-    <div className="timelineItem">
-      <div className="timelineDot"></div>
-      <div className="glassCard educationTimelineCard">
-        <span>GRADUATE | 2022 - 2025</span>
+          <div className="timelineItem">
 
-        <h3>Bachelor of Computer Applications</h3>
+            <div className="timelineDot"></div>
 
-        <p>
-          Completed BCA with a strong foundation in programming,
-          computer science fundamentals, and software development.
-        </p>
-      </div>
-      
-    </div>
+            <div className="glassCard educationTimelineCard">
 
-  </div>
-</section>
+              <span>
+                GRADUATE | 2022 - 2025
+              </span>
+
+              <h3>
+                Bachelor of Computer Applications
+              </h3>
+
+              <p>
+                Completed BCA with a strong foundation in
+                programming, computer science fundamentals
+                and software development.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* MCA */}
+
+          <div className="timelineItem">
+
+            <div className="timelineDot"></div>
+
+            <div className="glassCard educationTimelineCard">
+
+              <span>
+                POSTGRADUATE | 2025 - 2027
+              </span>
+
+              <h3>
+                Master of Computer Applications in AI & ML
+              </h3>
+
+              <p>
+                MCA with focus on Artificial Intelligence,
+                Machine Learning, Generative AI and intelligent
+                systems.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
       {/* ================= CONTACT ================= */}
 
@@ -681,6 +805,7 @@ function App() {
         className="contactSection"
         id="contact"
       >
+
         <div className="contactGlow"></div>
 
         <p>
@@ -700,6 +825,7 @@ function App() {
         </p>
 
         <div className="contactButtons">
+
           <a
             href="mailto:2005yogendrakushwaha@gmail.com"
             className="socialIconBtn emailIcon"
@@ -714,7 +840,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             className="socialIconBtn linkedinIcon"
-            aria-label="Yogendra Kushwaha on LinkedIn"
+            aria-label="Yogendra Kushwaha LinkedIn"
             title="LinkedIn"
           >
             <LinkedInIcon />
@@ -725,19 +851,30 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             className="socialIconBtn githubIcon"
-            aria-label="Yogendra Kushwaha on GitHub"
+            aria-label="Yogendra Kushwaha GitHub"
             title="GitHub"
           >
             <GitHubIcon />
           </a>
+
         </div>
+
       </section>
 
       {/* ================= FOOTER ================= */}
+
       <footer>
-        <div className="logo">
-            <img src={logo} alt="YK Logo" className="logoImage" />
-          </div>
+
+        <div className="footerLogo">
+
+          <img
+            src={logo}
+            alt="YK Logo"
+            className="footerLogoImage"
+          />
+
+        </div>
+
         <p>
           Designed & built by Yogendra Kushwaha
         </p>
@@ -745,8 +882,11 @@ function App() {
         <span>
           © 2026
         </span>
+
       </footer>
+
     </main>
-        );
+  );
 }
+
 export default App;
