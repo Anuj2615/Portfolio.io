@@ -642,10 +642,24 @@ function App() {
 
   <div className="timeline educationTimeline">
 
+    {/* MCA */}
+    <div className="timelineItem">
+      <div className="timelineDot"></div>
+      <div className="glassCard educationTimelineCard">
+        <span>POSTGRADUATE | 2025 - 2027</span>
+
+        <h3>Master of Computer Applications in AI & ML</h3>
+
+        <p>
+          MCA with focus on Artificial Intelligence,
+          Machine Learning, Generative AI and intelligent systems.
+        </p>
+      </div>
+    </div>
+
     {/* BCA */}
     <div className="timelineItem">
       <div className="timelineDot"></div>
-
       <div className="glassCard educationTimelineCard">
         <span>GRADUATE | 2022 - 2025</span>
 
@@ -656,22 +670,7 @@ function App() {
           computer science fundamentals, and software development.
         </p>
       </div>
-    </div>
-
-    {/* MCA */}
-    <div className="timelineItem">
-      <div className="timelineDot"></div>
-
-      <div className="glassCard educationTimelineCard">
-        <span>POSTGRADUATE | 2025 - 2027</span>
-
-        <h3>Master of Computer Applications in AI & ML</h3>
-
-        <p>
-          Currently pursuing MCA with focus on Artificial Intelligence,
-          Machine Learning, Generative AI and intelligent systems.
-        </p>
-      </div>
+      
     </div>
 
   </div>
