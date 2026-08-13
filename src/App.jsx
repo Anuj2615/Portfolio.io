@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import "./App.css";
+import logo from "./assets/yk-logo.png";
 
 import avatar from "./assets/avatar.png";
 import profile from "./assets/profile.jpeg";
@@ -62,11 +63,11 @@ function App() {
         onEnded={() => setIsPlaying(false)}
       />
 
-      {/* ================= NAVBAR ================= */}
+            {/* ================= NAVBAR ================= */}
 
-      <nav className="navbar">
+      <nav>
         <div className="logo">
-          YK<span>.</span>
+          <img src={logo} alt="YK Logo" className="logoImage" />
         </div>
 
         <div className="navLinks">
@@ -735,12 +736,10 @@ function App() {
       </section>
 
       {/* ================= FOOTER ================= */}
-
       <footer>
         <div className="logo">
-          YK<span>.</span>
-        </div>
-
+            <img src={logo} alt="YK Logo" className="logoImage" />
+          </div>
         <p>
           Designed & built by Yogendra Kushwaha
         </p>
@@ -750,7 +749,6 @@ function App() {
         </span>
       </footer>
     </main>
-  );
+        );
 }
-
 export default App;
